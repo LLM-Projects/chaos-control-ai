@@ -1,4 +1,4 @@
-name: Deploy Next.js Site
+name: Deploy Chaos Control AI Site
 
 on:
   push:
