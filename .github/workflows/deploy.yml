@@ -1,0 +1,51 @@
+name: Deploy Next.js Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Remove node_modules
+        run: rm -rf node_modules/
+
+      - name: Install dependencies
+        run: npm i --force
+
+      - name: Build
+        run: npm run build
+
+      - name: Export static files
+        run: npm run export || npx next export
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: out
+          branch: gh-pages
+          clean: true
+
+      - name: Update deployment status
+        if: success()
+        run: |
+          echo "🚀 Deployment successful! Site is live."
+          echo "Visit at https://${{ github.repository_owner }}.github.io/$(echo ${{ github.repository }} | cut -d'/' -f2)/"
