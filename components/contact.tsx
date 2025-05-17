@@ -159,7 +159,7 @@ export default function Contact() {
                 Office Hours
               </h3>
               <div className="space-y-2">
-                <p className="text-white">❤️ Always there for you ❤️</p>
+                <p className="text-white">❤️ Chaos Control AI ❤️</p>
               </div>
             </motion.div>
           </motion.div>
