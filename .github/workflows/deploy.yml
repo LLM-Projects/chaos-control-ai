@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [master]
   workflow_dispatch:
 
 permissions:
@@ -19,30 +19,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "npm"
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-        with:
-          static_site_generator: next
+      - name: Install dependencies (force)
+        run: |
+          rm -rf node_modules package-lock.json
+          npm i --force
 
-      - name: Install dependencies
-        run: npm i --force
-
-      - name: Build with Next.js
+      - name: Build
         run: npm run build
+        env:
+          NODE_ENV: production
 
-      - name: Static HTML export with Next.js
-        run: npx next export
+      - name: List files after build
+        run: ls -la
+
+      - name: Check if out directory exists
+        run: |
+          if [ ! -d "./out" ]; then
+            echo "Directory out does not exist!"
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
@@ -55,4 +63,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
