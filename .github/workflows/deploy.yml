@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]  # or master, depending on your setup
   workflow_dispatch:
 
 permissions:
@@ -24,23 +24,22 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-          cache: "npm"
+          node-version: '20'
+          cache: 'npm'
 
-      - name: Install dependencies (force)
-        run: |
-          rm -rf node_modules package-lock.json
-          npm i --force
+      - name: Install dependencies
+        run: npm i --force
 
-      - name: Build with Next.js
+      - name: Build static site
         run: npm run build
         env:
           NODE_ENV: production
+          GITHUB_PAGES: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload artifact
+      - name: Upload static site
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
