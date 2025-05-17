@@ -45,7 +45,7 @@ export default function WhoWeWorkWith() {
             WHO WE WORK WITH
           </motion.div>
           <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-4">
-            Trusted by Innovative Leaders
+            Trusted by People
           </motion.h2>
           <motion.p variants={itemVariants} className="max-w-2xl mx-auto text-muted-foreground">
             We partner with forward-thinking organizations across industries to deliver exceptional results and drive
