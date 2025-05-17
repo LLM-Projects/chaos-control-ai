@@ -42,20 +42,20 @@ export default function OurWorks() {
             variants={itemVariants}
             className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary"
           >
-            ON STAGE
+            OUR WORKS
           </motion.div>
           <motion.h2
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Speaking Engagements
+            Projects & Writings
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="max-w-2xl mx-auto text-muted-foreground"
           >
-            Our team regularly shares insights and expertise at industry
-            conferences and events around the world.
+            Our team collaborates on innovative software solutions, creating
+            cutting-edge applications and technologies for clients.
           </motion.p>
         </motion.div>
 
@@ -65,29 +65,33 @@ export default function OurWorks() {
           variants={containerVariants}
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          <SpeakingEvent
+          <ProjectCard
             image="/placeholder.svg?height=400&width=600"
-            title="Future of AI Summit"
-            location="New York, 2023"
+            title="Music Do Re Mi"
+            url="https://github.com/LLM-Projects/music-do-re-mi"
+            platform="Github"
             description="Keynote on 'Transforming Business Models with Artificial Intelligence'"
           />
-          <SpeakingEvent
+          <ProjectCard
             image="/placeholder.svg?height=400&width=600"
-            title="Global Tech Conference"
-            location="London, 2023"
+            title="Email.AI"
+            url="https://github.com/LLM-Projects/music-do-re-mi"
+            platform="Github"
             description="Panel discussion on 'Digital Transformation Strategies for Enterprise'"
           />
-          <SpeakingEvent
+          <ProjectCard
             image="/placeholder.svg?height=400&width=600"
-            title="Innovation Forum"
-            location="San Francisco, 2022"
+            title="Retrieval-Augmented Generation in Production with Haystack"
+            url="https://www.oreilly.com/library/view/retrieval-augmented-generation-in/9781098165161/"
+            platform="O-Reilly"
             description="Workshop on 'Building Resilient Digital Ecosystems'"
           />
-          <SpeakingEvent
+          <ProjectCard
             image="/placeholder.svg?height=400&width=600"
-            title="Women in Tech Summit"
-            location="Berlin, 2022"
-            description="Fireside chat on 'Leadership in the Digital Age'"
+            title="Docs QA Bot🤖"
+            url="https://github.com/LLM-Projects/docs-qa-bot"
+            platform="Medium"
+            description="A streamlit app that enables users to interact with the uploaded PDF"
           />
         </motion.div>
       </div>
@@ -95,15 +99,17 @@ export default function OurWorks() {
   );
 }
 
-function SpeakingEvent({
+function ProjectCard({
   image,
   title,
-  location,
+  url,
+  platform,
   description,
 }: {
   image: string;
   title: string;
-  location: string;
+  url: string;
+  platform: string;
   description: string;
 }) {
   return (
@@ -129,7 +135,14 @@ function SpeakingEvent({
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
           <h3 className="text-xl font-bold">{title}</h3>
-          <p className="text-white/80 mb-2">{location}</p>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/80 mb-2"
+          >
+            {platform}
+          </a>
           <p className="text-sm text-white/70">{description}</p>
         </div>
       </div>

@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function Contact() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -20,7 +20,7 @@ export default function Contact() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -29,7 +29,7 @@ export default function Contact() {
       y: 0,
       transition: { duration: 0.5, ease: "easeOut" },
     },
-  }
+  };
 
   return (
     <section id="contact" className="w-full py-20 bg-black text-white">
@@ -47,12 +47,18 @@ export default function Contact() {
           >
             CONTACT
           </motion.div>
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <motion.h2
+            variants={itemVariants}
+            className="text-3xl md:text-4xl font-bold mb-4 text-white"
+          >
             Get in Touch
           </motion.h2>
-          <motion.p variants={itemVariants} className="max-w-2xl mx-auto text-white/70">
-            Have a question or want to learn more about our services? Fill out the form below and we'll get back to you
-            as soon as possible.
+          <motion.p
+            variants={itemVariants}
+            className="max-w-2xl mx-auto text-white/70"
+          >
+            Have a question or want to learn more about our services? Fill out
+            the form below and we'll get back to you as soon as possible.
           </motion.p>
         </motion.div>
 
@@ -66,7 +72,10 @@ export default function Contact() {
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-white">
+                  <label
+                    htmlFor="name"
+                    className="text-sm font-medium text-white"
+                  >
                     Name
                   </label>
                   <Input
@@ -76,7 +85,10 @@ export default function Contact() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-white">
+                  <label
+                    htmlFor="email"
+                    className="text-sm font-medium text-white"
+                  >
                     Email
                   </label>
                   <Input
@@ -88,7 +100,10 @@ export default function Contact() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-white">
+                <label
+                  htmlFor="subject"
+                  className="text-sm font-medium text-white"
+                >
                   Subject
                 </label>
                 <Input
@@ -98,7 +113,10 @@ export default function Contact() {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-white">
+                <label
+                  htmlFor="message"
+                  className="text-sm font-medium text-white"
+                >
                   Message
                 </label>
                 <Textarea
@@ -108,7 +126,10 @@ export default function Contact() {
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
                 />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button
+                type="submit"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
                 Send Message
               </Button>
             </form>
@@ -116,36 +137,34 @@ export default function Contact() {
 
           <motion.div variants={containerVariants} className="space-y-8">
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-semibold mb-4 text-white">Contact Information</h3>
+              <h3 className="text-xl font-semibold mb-4 text-white">
+                Contact Information
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5" />
                   <div>
-                    <p className="text-white">123 Innovation Street</p>
-                    <p className="text-white/70">San Francisco, CA 94103</p>
+                    <p className="text-white">📍 Everywhere</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <p className="text-white">+1 (555) 123-4567</p>
-                </div>
-                <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <p className="text-white">hello@trailblaze.com</p>
+                  <p className="text-white">skanda.vivek@chaoscontrol.net</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-semibold mb-4 text-white">Office Hours</h3>
+              <h3 className="text-xl font-semibold mb-4 text-white">
+                Office Hours
+              </h3>
               <div className="space-y-2">
-                <p className="text-white">Monday - Friday: 9AM - 6PM</p>
-                <p className="text-white/70">Saturday - Sunday: Closed</p>
+                <p className="text-white">❤️ Always there for you ❤️</p>
               </div>
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
