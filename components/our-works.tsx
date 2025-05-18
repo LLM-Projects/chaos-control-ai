@@ -48,14 +48,13 @@ export default function OurWorks() {
             variants={itemVariants}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Projects & Writings
+            Our Clients
           </motion.h2>
           <motion.p
             variants={itemVariants}
             className="max-w-2xl mx-auto text-muted-foreground"
           >
-            Our team collaborates on innovative software solutions, creating
-            cutting-edge applications and technologies for clients.
+            We partner with organizations and individuals to deliver impactful digital solutions, from websites to marketing and technical consulting.
           </motion.p>
         </motion.div>
 
@@ -63,36 +62,36 @@ export default function OurWorks() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <ProjectCard
-            image="/placeholder.svg?height=400&width=600"
+            image="/images/content/music-doremi.png"
             title="Music Do Re Mi"
-            url="https://github.com/LLM-Projects/music-do-re-mi"
-            platform="Github"
-            description="Keynote on 'Transforming Business Models with Artificial Intelligence'"
+            url="https://musicdoremi.com"
+            platform="Website Creation"
+            // description="A modern website built for a music education platform, featuring an intuitive interface for students and teachers"
           />
           <ProjectCard
-            image="/placeholder.svg?height=400&width=600"
-            title="Email.AI"
-            url="https://github.com/LLM-Projects/music-do-re-mi"
-            platform="Github"
-            description="Panel discussion on 'Digital Transformation Strategies for Enterprise'"
+            image="/images/content/yifan.png"
+            title="YiFan Restaurant"
+            url=""
+            platform="Social Media Marketing"
+            // description="Transforming a small restaurant into a popular social media presence through strategic content creation and community engagement"
           />
           <ProjectCard
-            image="/placeholder.svg?height=400&width=600"
+            image="/images/content/ragwph_cover.png"
             title="Retrieval-Augmented Generation in Production with Haystack"
-            url="https://www.oreilly.com/library/view/retrieval-augmented-generation-in/9781098165161/"
-            platform="O-Reilly"
-            description="Workshop on 'Building Resilient Digital Ecosystems'"
+            url="https://learning.oreilly.com/library/view/retrieval-augmented-generation-in/9781098165161/"
+            platform="Technical Writing and Consulting"
+            // description="A comprehensive guide to building production-ready LLM applications using the Haystack framework"
           />
-          <ProjectCard
+          {/* <ProjectCard
             image="/placeholder.svg?height=400&width=600"
             title="Docs QA Bot🤖"
             url="https://github.com/LLM-Projects/docs-qa-bot"
             platform="Medium"
             description="A streamlit app that enables users to interact with the uploaded PDF"
-          />
+          /> */}
         </motion.div>
       </div>
     </section>
@@ -112,6 +111,23 @@ function ProjectCard({
   platform: string;
   description: string;
 }) {
+  const cardContent = (
+    <div className="relative aspect-video overflow-hidden rounded-xl">
+      <Image
+        src={image || "/placeholder.svg"}
+        alt={title}
+        fill
+        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+        <h3 className="text-xl font-bold">{title}</h3>
+        <span className="text-white/80 mb-2 block">{platform}</span>
+        <p className="text-sm text-white/70">{description}</p>
+      </div>
+    </div>
+  );
+
   return (
     <motion.div
       variants={{
@@ -123,29 +139,15 @@ function ProjectCard({
         },
       }}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      className="group relative overflow-hidden rounded-xl"
+      className="group relative overflow-hidden rounded-xl cursor-pointer"
     >
-      <div className="relative aspect-video overflow-hidden rounded-xl">
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-          <h3 className="text-xl font-bold">{title}</h3>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/80 mb-2"
-          >
-            {platform}
-          </a>
-          <p className="text-sm text-white/70">{description}</p>
-        </div>
-      </div>
+      {url ? (
+        <a href={url} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
+          {cardContent}
+        </a>
+      ) : (
+        cardContent
+      )}
     </motion.div>
   );
 }

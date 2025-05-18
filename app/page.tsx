@@ -1,7 +1,7 @@
 import Hero from "@/components/hero";
 import WhatWeOffer from "@/components/what-we-offer";
-import TeamLead from "@/components/team-lead";
-import InThePress from "@/components/in-the-press";
+// import TeamLead from "@/components/team-lead";
+// import InThePress from "@/components/in-the-press";
 import OurWorks from "@/components/our-works";
 import Testimonials from "@/components/testimonials";
 import Consultation from "@/components/consultation";
@@ -13,8 +13,8 @@ export default function Home() {
       <Hero />
       <WhatWeOffer />
       {/* <WhoWeWorkWith /> */}
-      <TeamLead />
-      <InThePress />
+      {/* <TeamLead />
+      <InThePress /> */}
       <OurWorks />
       <Testimonials />
       <Consultation />

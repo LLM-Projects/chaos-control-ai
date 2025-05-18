@@ -66,27 +66,17 @@ export default function WhatWeOffer() {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           <ServiceCard
             icon={<Lightbulb className="w-10 h-10 text-primary" />}
-            title="Strategic Consulting"
-            description="We help you develop a clear vision and roadmap for your digital transformation journey."
-          />
-          <ServiceCard
-            icon={<Code className="w-10 h-10 text-primary" />}
-            title="Custom Development"
-            description="Build scalable, high-performance applications tailored to your specific business needs."
+            title="Website Creation"
+            description="We help you develop and build beautiful, modern websites that align with your business goals."
           />
           <ServiceCard
             icon={<Cpu className="w-10 h-10 text-primary" />}
             title="AI Integration"
             description="Leverage cutting-edge artificial intelligence to automate processes, gain insights, and create intelligent solutions for your business."
-          />
-          <ServiceCard
-            icon={<Users className="w-10 h-10 text-primary" />}
-            title="User Experience Design"
-            description="Create intuitive, engaging experiences that delight your users and drive conversion."
           />
           <ServiceCard
             icon={<LineChart className="w-10 h-10 text-primary" />}
