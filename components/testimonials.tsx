@@ -13,31 +13,11 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote:
-        "I've worked with many consultants over the years, but this team truly stands out. Their strategic insights and technical expertise helped us achieve our goals faster than we thought possible.",
-      author: "Sarah Johnson",
-      role: "CEO, TechVision Inc.",
-    },
-    {
-      quote:
-        "The team's ability to understand our complex requirements and translate them into elegant solutions has been impressive. They're true partners in our success journey.",
-      author: "Michael Chen",
-      role: "CTO, Innovate Labs",
-    },
-    {
-      quote:
-        "Working with this team transformed our business. Their holistic approach to digital strategy and execution delivered exceptional results that exceeded our expectations.",
-      author: "Emma Rodriguez",
-      role: "VP of Marketing, Global Brands",
+        "Fantastic service, our website was designed with the help of this company and turned out wonderful. Everything was very detailed and included all the necessary information I wanted to include.\n\nThe process was very efficient, from communication to production. I highly recommend them to anyone wanting to create a website.",
+      author: "Ann Wang",
+      role: "Customer",
     },
   ]
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-  }
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -94,33 +74,18 @@ export default function Testimonials() {
           </div>
 
           <div className="relative overflow-hidden min-h-[200px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentTestimonial}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="text-center px-6"
-              >
-                <p className="text-xl md:text-2xl italic mb-8">"{testimonials[currentTestimonial].quote}"</p>
-                <div>
-                  <p className="font-semibold text-lg">{testimonials[currentTestimonial].author}</p>
-                  <p className="text-muted-foreground">{testimonials[currentTestimonial].role}</p>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div className="flex justify-center mt-10 space-x-4">
-            <Button variant="outline" size="icon" onClick={prevTestimonial} className="rounded-full">
-              <ChevronLeft className="h-5 w-5" />
-              <span className="sr-only">Previous testimonial</span>
-            </Button>
-            <Button variant="outline" size="icon" onClick={nextTestimonial} className="rounded-full">
-              <ChevronRight className="h-5 w-5" />
-              <span className="sr-only">Next testimonial</span>
-            </Button>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center px-6"
+            >
+              <p className="text-xl md:text-2xl italic mb-8">"{testimonials[0].quote}"</p>
+              <div>
+                <p className="font-semibold text-lg">{testimonials[0].author}</p>
+                <p className="text-muted-foreground">{testimonials[0].role}</p>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

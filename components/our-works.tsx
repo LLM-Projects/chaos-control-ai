@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { basePath } from "@/lib/basePath";
 
 export default function OurWorks() {
   const ref = useRef(null);
@@ -69,21 +70,21 @@ export default function OurWorks() {
             title="Music Do Re Mi"
             url="https://musicdoremi.com"
             platform="Website Creation"
-            // description="A modern website built for a music education platform, featuring an intuitive interface for students and teachers"
+            description=""
           />
           <ProjectCard
             image="/images/content/yifan.png"
             title="YiFan Restaurant"
             url=""
             platform="Social Media Marketing"
-            // description="Transforming a small restaurant into a popular social media presence through strategic content creation and community engagement"
+            description=""
           />
           <ProjectCard
             image="/images/content/ragwph_cover.png"
             title="Retrieval-Augmented Generation in Production with Haystack"
             url="https://learning.oreilly.com/library/view/retrieval-augmented-generation-in/9781098165161/"
             platform="Technical Writing and Consulting"
-            // description="A comprehensive guide to building production-ready LLM applications using the Haystack framework"
+            description=""
           />
           {/* <ProjectCard
             image="/placeholder.svg?height=400&width=600"
@@ -114,7 +115,7 @@ function ProjectCard({
   const cardContent = (
     <div className="relative aspect-video overflow-hidden rounded-xl">
       <Image
-        src={image || "/placeholder.svg"}
+        src={`${basePath}${image || "/placeholder.svg"}`}
         alt={title}
         fill
         className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
