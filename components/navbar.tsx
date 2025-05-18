@@ -141,9 +141,7 @@ export default function Navbar() {
 function NavLinks() {
   return (
     <nav className="flex items-center space-x-8">
-      <NavLink href="#services">Services</NavLink>
-      <NavLink href="#about">About</NavLink>
-      <NavLink href="#press">Press</NavLink>
+      <NavLink href="#services">What We Offer</NavLink>
       <NavLink href="#testimonials">Testimonials</NavLink>
       <NavLink href="#contact">Contact</NavLink>
     </nav>
@@ -154,13 +152,7 @@ function MobileNavLinks({ closeMenu }: { closeMenu: () => void }) {
   return (
     <nav className="flex flex-col space-y-6">
       <MobileNavLink href="#services" onClick={closeMenu}>
-        Services
-      </MobileNavLink>
-      <MobileNavLink href="#about" onClick={closeMenu}>
-        About
-      </MobileNavLink>
-      <MobileNavLink href="#press" onClick={closeMenu}>
-        Press
+        What We Offer
       </MobileNavLink>
       <MobileNavLink href="#testimonials" onClick={closeMenu}>
         Testimonials

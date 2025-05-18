@@ -57,8 +57,7 @@ export default function Contact() {
             variants={itemVariants}
             className="max-w-2xl mx-auto text-white/70"
           >
-            Have a question or want to learn more about our services? Fill out
-            the form below and we'll get back to you as soon as possible.
+            Want to learn more about our services?
           </motion.p>
         </motion.div>
 
@@ -69,6 +68,7 @@ export default function Contact() {
           className="grid grid-cols-1 lg:grid-cols-3 gap-12"
         >
           <motion.div variants={itemVariants} className="lg:col-span-2">
+            {/*
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -133,6 +133,7 @@ export default function Contact() {
                 Send Message
               </Button>
             </form>
+            */}
           </motion.div>
 
           <motion.div variants={containerVariants} className="space-y-8">
@@ -144,20 +145,20 @@ export default function Contact() {
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5" />
                   <div>
-                    <p className="text-white">📍 Everywhere</p>
+                    <a href="https://maps.app.goo.gl/CeVkwHAsHiYy6Yg5A" target="_blank" rel="noopener noreferrer" className="text-white underline">📍 Our Location</a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-primary" />
-                  <p className="text-white">skanda.vivek@chaoscontrol.net</p>
+                  <a href="mailto:info@chaoscontro.net" className="text-white underline">info@chaoscontrol.net</a>
                 </div>
               </div>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-semibold mb-4 text-white">
+              {/* <h3 className="text-xl font-semibold mb-4 text-white">
                 Office Hours
-              </h3>
+              </h3> */}
               <div className="space-y-2">
                 <p className="text-white">❤️ Chaos Control AI ❤️</p>
               </div>
