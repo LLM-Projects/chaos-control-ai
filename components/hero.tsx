@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { getBasePath } from "@/utils/getBasePath";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -16,6 +17,8 @@ export default function Hero() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9]);
   const y = useTransform(scrollYProgress, [0, 0.5], [0, 100]);
 
+  const basePath = getBasePath();
+
   return (
     <section
       ref={ref}
@@ -23,7 +26,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/content/bg-ai.png"
+          src={`${basePath}/assets/content/bg-ai.png`}
           alt="AI background"
           fill
           priority
