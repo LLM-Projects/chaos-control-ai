@@ -55,9 +55,7 @@ export default function OurWorks() {
             variants={itemVariants}
             className="max-w-2xl mx-auto text-muted-foreground"
           >
-            We partner with organizations and individuals to deliver impactful
-            digital solutions, from websites to marketing and technical
-            consulting.
+            We partner with organizations and individuals to deliver impactful digital solutions, from websites to marketing and technical consulting.
           </motion.p>
         </motion.div>
 
@@ -68,21 +66,21 @@ export default function OurWorks() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <ProjectCard
-            image={`./images/content/music-doremi.png`}
+            image="/images/content/music-doremi.png"
             title="Music Do Re Mi"
             url="https://musicdoremi.com"
             platform="Website Creation"
             description=""
           />
           <ProjectCard
-            image={`./images/content/yifan.png`}
+            image="/images/content/yifan.png"
             title="YiFan Restaurant"
             url=""
             platform="Social Media Marketing"
             description=""
           />
           <ProjectCard
-            image={`./images/content/ragwph_cover.png`}
+            image="/images/content/ragwph_cover.png"
             title="Retrieval-Augmented Generation in Production with Haystack"
             url="https://learning.oreilly.com/library/view/retrieval-augmented-generation-in/9781098165161/"
             platform="Technical Writing and Consulting"
@@ -117,7 +115,7 @@ function ProjectCard({
   const cardContent = (
     <div className="relative aspect-video overflow-hidden rounded-xl">
       <Image
-        src={`${image || "/placeholder.svg"}`}
+        src={`${basePath}${image || "/placeholder.svg"}`}
         alt={title}
         fill
         className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -145,12 +143,7 @@ function ProjectCard({
       className="group relative overflow-hidden rounded-xl cursor-pointer"
     >
       {url ? (
-        <a
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block h-full w-full"
-        >
+        <a href={url} target="_blank" rel="noopener noreferrer" className="block h-full w-full">
           {cardContent}
         </a>
       ) : (
