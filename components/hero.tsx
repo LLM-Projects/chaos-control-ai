@@ -23,7 +23,7 @@ export default function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/content/bg-ai.png"
+          src="https://i.imgur.com/84Qox3Q.png"
           alt="AI background"
           fill
           priority

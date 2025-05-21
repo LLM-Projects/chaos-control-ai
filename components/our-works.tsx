@@ -66,21 +66,21 @@ export default function OurWorks() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <ProjectCard
-            image="/images/content/music-doremi.png"
+            image="https://i.imgur.com/FO25NdC.png"
             title="Music Do Re Mi"
             url="https://musicdoremi.com"
             platform="Website Creation"
             description=""
           />
           <ProjectCard
-            image="/images/content/yifan.png"
+            image="https://imgur.com/rzy0Oy7.png"
             title="YiFan Restaurant"
             url=""
             platform="Social Media Marketing"
             description=""
           />
           <ProjectCard
-            image="/images/content/ragwph_cover.png"
+            image="https://imgur.com/mIEy8cT.png"
             title="Retrieval-Augmented Generation in Production with Haystack"
             url="https://learning.oreilly.com/library/view/retrieval-augmented-generation-in/9781098165161/"
             platform="Technical Writing and Consulting"
