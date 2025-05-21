@@ -65,17 +65,7 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-lg font-semibold">Email</h3>
-              <p className="text-white/70">skanda@chaoscontrol.net</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="space-y-6 text-center md:text-left">
-            <div className="flex flex-col items-center md:items-start gap-2">
-              <div className="p-3 bg-primary/10 rounded-full mb-2">
-                <Phone className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-lg font-semibold">Phone</h3>
-              <p className="text-white/70">+1 (404) 789-1531</p>
+              <p className="text-white/70">info@chaoscontrol.net</p>
             </div>
           </motion.div>
 
