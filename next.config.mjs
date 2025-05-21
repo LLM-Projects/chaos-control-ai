@@ -9,6 +9,7 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['i.imgur.com', 'imgur.com'],
   },
   output: "export",
   basePath: isGithubPages ? "/chaos-control-ai" : "",

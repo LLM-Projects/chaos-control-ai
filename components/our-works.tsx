@@ -112,10 +112,13 @@ function ProjectCard({
   platform: string;
   description: string;
 }) {
+  // Check if the image URL is external (starts with http or https)
+  const isExternalImage = image.startsWith('http');
+  
   const cardContent = (
     <div className="relative aspect-video overflow-hidden rounded-xl">
       <Image
-        src={`${basePath}${image || "/placeholder.svg"}`}
+        src={isExternalImage ? image : `${basePath}${image || "/placeholder.svg"}`}
         alt={title}
         fill
         className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
