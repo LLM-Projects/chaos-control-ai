@@ -5,7 +5,7 @@ import WhatWeOffer from "@/components/what-we-offer";
 import OurWorks from "@/components/our-works";
 import Testimonials from "@/components/testimonials";
 import Consultation from "@/components/consultation";
-import Contact from "@/components/contact";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
       <OurWorks />
       <Testimonials />
       <Consultation />
-      <Contact />
+      <Footer />
     </main>
   );
 }
