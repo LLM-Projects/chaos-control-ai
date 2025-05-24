@@ -53,9 +53,11 @@ export default function Consultation() {
             we can help you achieve your goals.
           </motion.p>
           <motion.div variants={itemVariants} whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Calendar className="mr-2 h-5 w-5" />
-              Book Your Free Consultation
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <a href="https://calendly.com/skandavivek/30min" target="_blank" rel="noopener noreferrer">
+                <Calendar className="mr-2 h-5 w-5" />
+                Book Your Free Consultation
+              </a>
             </Button>
           </motion.div>
         </motion.div>

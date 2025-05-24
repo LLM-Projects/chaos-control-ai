@@ -87,7 +87,9 @@ export default function Navbar() {
                 <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                 <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               </Button>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">Book a Call</Button>
+              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <a href="https://calendly.com/skandavivek/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+              </Button>
             </div>
           </div>
 
@@ -128,7 +130,9 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col space-y-8 mt-12">
                 <MobileNavLinks closeMenu={() => setIsMobileMenuOpen(false)} />
-                <Button className="w-full">Book a Call</Button>
+                <Button asChild className="w-full">
+                  <a href="https://calendly.com/skandavivek/30min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                </Button>
               </div>
             </div>
           </motion.div>

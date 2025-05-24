@@ -130,7 +130,7 @@ export default function TeamLead() {
             <motion.div variants={itemVariants}>
               <Button variant="default" asChild>
                 <a
-                  href="https://cal.com/"
+                  href="https://calendly.com/skandavivek/30min"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
