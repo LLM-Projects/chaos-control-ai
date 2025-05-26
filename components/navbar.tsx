@@ -64,8 +64,10 @@ export default function Navbar() {
         initial="hidden"
         animate="visible"
         variants={navVariants}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-background/80 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
+        className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 backdrop-blur-md ${
+          isScrolled
+            ? "bg-background/80 shadow-sm py-3"
+            : "bg-white border-b border-white/10 py-5 text-black"
         }`}
       >
         <div className="container flex items-center justify-between">
@@ -76,7 +78,7 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <NavLinks />
+            <NavLinks isScrolled={isScrolled} />
             <div className="flex items-center space-x-4">
               <Button
                 variant="ghost"
@@ -142,12 +144,12 @@ export default function Navbar() {
   )
 }
 
-function NavLinks() {
+function NavLinks({ isScrolled }: { isScrolled: boolean }) {
   return (
     <nav className="flex items-center space-x-8">
-      <NavLink href="#services">What We Offer</NavLink>
-      <NavLink href="#testimonials">Testimonials</NavLink>
-      <NavLink href="#contact">Contact</NavLink>
+      <NavLink href="#services" isScrolled={isScrolled}>What We Offer</NavLink>
+      <NavLink href="#testimonials" isScrolled={isScrolled}>Testimonials</NavLink>
+      <NavLink href="#contact" isScrolled={isScrolled}>Contact</NavLink>
     </nav>
   )
 }
@@ -168,17 +170,17 @@ function MobileNavLinks({ closeMenu }: { closeMenu: () => void }) {
   )
 }
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({ href, children, isScrolled }: { href: string; children: React.ReactNode; isScrolled: boolean }) {
   return (
     <Link
       href={href}
-      className="relative text-foreground/70 hover:text-foreground transition-colors duration-200 font-medium"
+      className={`relative font-medium transition-colors duration-200 hover:text-primary ${isScrolled ? 'text-foreground/70 hover:text-foreground' : 'text-black hover:text-primary'}`}
     >
       <span className="relative">
         {children}
         <motion.span
           className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary"
-          whileHover={{ width: "100%" }}
+          whileHover={{ width: '100%' }}
           transition={{ duration: 0.3 }}
         />
       </span>

@@ -62,21 +62,20 @@ export default function Contact() {
           <motion.div variants={itemVariants} className="space-y-6 text-center md:text-left">
             <div className="flex flex-col items-center md:items-start gap-2">
               <div className="p-3 bg-primary/10 rounded-full mb-2">
-                <Mail className="w-6 h-6 text-primary" />
+                <Mail className="w-6 h-6 text-white dark:text-primary" />
               </div>
               <h3 className="text-lg font-semibold">Email</h3>
-              <p className="text-white/70">info@chaoscontrol.net</p>
+              <a href="mailto:info@chaoscontrol.net" className="text-white/70 underline">info@chaoscontrol.net</a>
             </div>
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-6 text-center md:text-left">
             <div className="flex flex-col items-center md:items-start gap-2">
               <div className="p-3 bg-primary/10 rounded-full mb-2">
-                <MapPin className="w-6 h-6 text-primary" />
+                <MapPin className="w-6 h-6 text-white dark:text-primary" />
               </div>
               <h3 className="text-lg font-semibold"><a href="https://maps.app.goo.gl/yWftUEvG24k914Cd6" target="_blank">Location</a></h3>
-              {/* <p className="text-white/70">123 Innovation Street</p>
-              <p className="text-white/70">San Francisco, CA 94103</p> */}
+              <a href="https://github.com/LLM-Projects/" className="text-white/70 underline" target="_blank" rel="noopener noreferrer">Github</a>
             </div>
           </motion.div>
         </motion.div>

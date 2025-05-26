@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+
 
 export default function Hero() {
   const ref = useRef(null);
@@ -29,7 +29,7 @@ export default function Hero() {
           priority
           className="object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent dark:to-black" />
       </div>
 
       <motion.div
@@ -43,7 +43,7 @@ export default function Hero() {
           className="text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight"
         >
           Transforming Ideas <br className="hidden md:block" />
-          Into <span className="text-primary">Reality</span>
+          Into <span className="text-[#23c45e]">Reality</span>
         </motion.h1>
 
         <motion.p
